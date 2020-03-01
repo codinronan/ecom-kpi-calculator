@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+  <!-- source https://dropshipscan.com/user/KPI.php -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Language" content="en" />
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#4188c9">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&subset=latin-ext">
+  <link href="assets/css/dashboard.css" rel="stylesheet" />
+</head>
+
+<body class="">
+  <div class="page">
+    <div class="page-main">
+      <div class="my-3 my-md-5">
+        <div class="container">
+
+          <div class="row row-cards row-deck">
+            <div class="col-sm-12 col-xl-12">
+              <form action method="post" class="card">
+                <div class="card-header">
+                  <h2 class="card-title">KPI Calculator</h2>
+                </div>
+                <div class="card-body">
+
+                  <div class="row">
+
+                    <div class="col-md-4 col-lg-4" id="wrapper">
+                      <h4 class="card-title">Variables</h4>
+                      <div class="form-group">
+                        <label class="form-label">Average Order Value</label>
+                        <div class="input-group">
+                          <span class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </span>
+                          <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" value="38" id="average_order_value">
+
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Fees</label>
+                        <div class="input-group">
+
+                          <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" value="2.9" id="average_fees">
+                          <span class="input-group-append">
+                            <span class="input-group-text">%</span>
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">COGS</label>
+                        <div class="input-group">
+                          <span class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </span>
+                          <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" value="6.55" id="average_COGS">
+
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Profit Target</label>
+                        <div class="input-group">
+
+                          <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" value="30" id="average_target">
+                          <span class="input-group-append">
+                            <span class="input-group-text">%</span>
+                          </span>
+                        </div>
+                      </div>
+                      <br>
+                      <h4 class="card-title">Advanced Variables</h4>
+                      <div class="form-group">
+                        <label class="form-label">Add to Cart</label>
+                        <div class="input-group">
+
+                          <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" value="14.00" id="add_to_cart">
+                          <span class="input-group-append">
+                            <span class="input-group-text">%</span>
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Checkout Reached</label>
+                        <div class="input-group">
+
+                          <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" value="8.17" id="reached_checkout">
+                          <span class="input-group-append">
+                            <span class="input-group-text">%</span>
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Purchased</label>
+                        <div class="input-group">
+
+                          <input type="text" class="form-control text-right" aria-label="Amount (to the nearest dollar)" value="5.7" id="purchased">
+                          <span class="input-group-append">
+                            <span class="input-group-text">%</span>
+                          </span>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-md-2 col-lg-2">
+                    </div>
+
+                    <div class="col-md-3 col-lg-3">
+                      <h4 class="card-title">Breakeven KPI</h4>
+                      <div class="form-group">
+                        <label class="form-label">Cost Per Purchase</label>
+                        <div class="form-control-plaintext" id="1"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Cost Per Checkout Initiated</label>
+                        <div class="form-control-plaintext" id="2"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Cost Per Add to Cart</label>
+                        <div class="form-control-plaintext" id="3"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Cost Per View Content</label>
+                        <div class="form-control-plaintext" id="4"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Return on Ad Spend</label>
+                        <div class="form-control-plaintext" id="5"></div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3 col-lg-3">
+                      <h4 class="card-title">Profit Target KPI</h4>
+                      <div class="form-group">
+                        <label class="form-label">Cost Per Purchase</label>
+                        <div class="form-control-plaintext" id="1b"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Cost Per Checkout Initiated</label>
+                        <div class="form-control-plaintext" id="2b"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Cost Per Add to Cart</label>
+                        <div class="form-control-plaintext" id="3b"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Cost Per View Content</label>
+                        <div class="form-control-plaintext" id="4b"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Return on Ad Spend</label>
+                        <div class="form-control-plaintext" id="5b"></div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="assets/js/calc.js"></script>
+
+</body>
+
+</html>
